@@ -38,9 +38,9 @@ call dein#add('Shougo/vimfiler.vim')
 call dein#add('ujihisa/unite-colorscheme')
 
 call dein#add('tomasr/molokai')
-call dein#add('scrooloose/syntastic')
+"call dein#add('scrooloose/syntastic')
 call dein#add('Shougo/vimshell.vim')
-call dein#add('jiangmiao/auto-pairs')
+"call dein#add('jiangmiao/auto-pairs')
 call dein#add('fatih/vim-go')
 
 " 必須
@@ -93,14 +93,14 @@ let g:go_highlight_generate_tags = 1
 let g:go_highlight_build_constraints = 1
 
 " Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
 " vim
 set title
