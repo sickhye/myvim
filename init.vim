@@ -38,10 +38,12 @@ call dein#add('Shougo/vimfiler.vim')
 call dein#add('ujihisa/unite-colorscheme')
 
 call dein#add('tomasr/molokai')
-"call dein#add('scrooloose/syntastic')
+" call dein#add('scrooloose/syntastic')
 call dein#add('Shougo/vimshell.vim')
-"call dein#add('jiangmiao/auto-pairs')
+" call dein#add('jiangmiao/auto-pairs')
 call dein#add('fatih/vim-go')
+" call dein#add('pbogut/deoplete-padawan')
+call dein#add('tpope/vim-fugitive')
 
 " 必須
 call dein#end()
@@ -96,11 +98,45 @@ let g:go_highlight_build_constraints = 1
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
-"
+
 "let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
+"
+"LightLine
+set laststatus=2
+set encoding=utf-8
+scriptencoding utf-8
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"x":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ },
+      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+      \ }
+
+"NERDTree
+nmap <silent> <C-e>      :NERDTreeToggle<CR>
+vmap <silent> <C-e> <Esc>:NERDTreeToggle<CR>
+omap <silent> <C-e>      :NERDTreeToggle<CR>
+imap <silent> <C-e> <Esc>:NERDTreeToggle<CR>
+cmap <silent> <C-e> <C-u>:NERDTreeToggle<CR>
+map  <C-k> :tabn<CR>
+map  <C-j> :tabp<CR>
+map  <C-n> :tabnew<CR>
 
 " vim
 set title
@@ -114,4 +150,4 @@ set shiftwidth=4
 " Enable filetype plugins
 filetype plugin on
 
-autocmd VimEnter * execute 'NERDTree'
+"autocmd VimEnter * execute 'NERDTree'
