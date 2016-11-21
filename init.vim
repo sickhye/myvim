@@ -150,7 +150,7 @@ set expandtab
 set shiftwidth=4
 
 " indent
-set list listchars=tab:\¦\ 
+set list listchars=tab:\¦\_ 
 let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'calendar', 'thumbnail', 'tweetvim']
 let g:indent_guides_start_level = 2
 
