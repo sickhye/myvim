@@ -106,6 +106,7 @@ let g:go_highlight_build_constraints = 1
 "let g:syntastic_check_on_wq = 0
 "
 "LightLine
+"
 set laststatus=2
 set encoding=utf-8
 scriptencoding utf-8
@@ -116,9 +117,9 @@ let g:lightline = {
       \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"x":""}',
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"\ue0a2":""}',
       \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \   'fugitive': '%{exists("*fugitive#head")?"\ue0a0 ".fugitive#head():""}'
       \ },
       \ 'component_visible_condition': {
       \   'readonly': '(&filetype!="help"&& &readonly)',
