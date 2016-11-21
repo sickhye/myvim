@@ -2,7 +2,7 @@ if &compatible
     set nocompatible
 endif
 " deinパス設定
-let s:dein_dir = fnamemodify('~/dein/', ':p') "<-お好きな場所
+let s:dein_dir = fnamemodify('~/.config/dein/', ':p') "<-お好きな場所
 let s:dein_repo_dir = s:dein_dir . 'repos/github.com/Shougo/dein.vim' "<-固定
 
 " dein.vim本体の存在チェックとインストール
@@ -44,6 +44,7 @@ call dein#add('Shougo/vimshell.vim')
 call dein#add('fatih/vim-go')
 " call dein#add('pbogut/deoplete-padawan')
 call dein#add('tpope/vim-fugitive')
+call dein#add('Yggdroot/indentLine')
 
 " 必須
 call dein#end()
@@ -146,6 +147,11 @@ set tabstop=4
 set autoindent
 set expandtab
 set shiftwidth=4
+
+" indent
+set list listchars=tab:\¦\ 
+let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'calendar', 'thumbnail', 'tweetvim']
+let g:indent_guides_start_level = 2
 
 " Enable filetype plugins
 filetype plugin on
