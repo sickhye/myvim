@@ -37,11 +37,17 @@ call dein#add('Shougo/unite-outline')
 call dein#add('Shougo/vimfiler.vim')
 call dein#add('ujihisa/unite-colorscheme')
 
+" Swift
+call dein#add('landaire/deoplete-swift')
+call dein#add('kballard/vim-swift')
+call dein#add('keith/swift.vim')
+
 call dein#add('tomasr/molokai')
 " call dein#add('scrooloose/syntastic')
 call dein#add('Shougo/vimshell.vim')
 " call dein#add('jiangmiao/auto-pairs')
 call dein#add('fatih/vim-go')
+call dein#add('SirVer/ultisnips')
 " call dein#add('pbogut/deoplete-padawan')
 call dein#add('tpope/vim-fugitive')
 call dein#add('Yggdroot/indentLine')
@@ -153,6 +159,8 @@ set shiftwidth=4
 set list listchars=tab:\¦\_ 
 let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'calendar', 'thumbnail', 'tweetvim']
 let g:indent_guides_start_level = 2
+" deoplete swift
+let g:deoplete#sources#swift#daemon_autostart = 1
 
 " Enable filetype plugins
 filetype plugin on
