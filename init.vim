@@ -48,6 +48,7 @@ call dein#add('Shougo/vimshell.vim')
 " call dein#add('jiangmiao/auto-pairs')
 call dein#add('fatih/vim-go')
 call dein#add('SirVer/ultisnips')
+call dein#add('tomtom/tcomment_vim')
 " call dein#add('pbogut/deoplete-padawan')
 call dein#add('tpope/vim-fugitive')
 call dein#add('Yggdroot/indentLine')
@@ -79,8 +80,8 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const' ]
 let g:deoplete#sources#go#package_dot = 1
-"let g:deoplete#sources#go#use_cache = 1
-"let g:deoplete#sources#go#json_directory = '~/tmp'
+let g:deoplete#sources#go#use_cache = 1
+let g:deoplete#sources#go#json_directory = '~/.cache/deoplete/go/'.$GOOS.'_'.$GOARCH
 
 " molokai
 syntax on
@@ -135,6 +136,13 @@ let g:lightline = {
       \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
       \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
       \ }
+
+"Go Mapping
+let mapleader="a"
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
 
 "NERDTree
 nmap <silent> <C-e>      :NERDTreeToggle<CR>
