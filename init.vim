@@ -101,6 +101,8 @@ let g:go_highlight_operators = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_generate_tags = 1
 let g:go_highlight_build_constraints = 1
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave = 1
 
 " Syntastic
 "set statusline+=%#warningmsg#
@@ -110,7 +112,8 @@ let g:go_highlight_build_constraints = 1
 "let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
+"let g:syntastic_go_checkers = ['golint', 'gotype', 'govet', 'go']
+"let g:syntastic_check_on_wq = 1 
 "
 "LightLine
 "
