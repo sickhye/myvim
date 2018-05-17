@@ -34,6 +34,11 @@ call dein#add('Shougo/unite-outline')
 call dein#add('Shougo/vimfiler.vim')
 call dein#add('ujihisa/unite-colorscheme')
 
+" rust
+call dein#add('rust-lang/rust.vim')
+call dein#add('racer-rust/vim-racer')
+call dein#add('roxma/nvim-cm-racer')
+
 " Swift
 call dein#add('landaire/deoplete-swift')
 call dein#add('kballard/vim-swift')
@@ -49,6 +54,10 @@ call dein#add('tomtom/tcomment_vim')
 " call dein#add('pbogut/deoplete-padawan')
 call dein#add('tpope/vim-fugitive')
 call dein#add('Yggdroot/indentLine')
+" julia
+call dein#add('JuliaEditorSupport/julia-vim')
+" lua
+call dein#add('tbastos/vim-lua')
 
 " 必須
 call dein#end()
@@ -98,7 +107,8 @@ let g:go_highlight_operators = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_generate_tags = 1
 let g:go_highlight_build_constraints = 1
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_enabled = ['vet', 'golint']
+"let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 let g:go_metalinter_autosave = 1
 
 " Syntastic
