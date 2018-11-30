@@ -24,6 +24,7 @@ call dein#add('Shougo/vimproc', {'build': 'make'})
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/deoplete.nvim')
 call dein#add('zchee/deoplete-go', {'build': 'make'})
+call dein#add('AndrewRadev/splitjoin.vim')
 
 call dein#add('itchyny/lightline.vim')
 call dein#add('scrooloose/nerdtree')
